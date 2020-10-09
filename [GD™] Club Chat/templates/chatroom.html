@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<div style="background-image: url('https://wallpapercave.com/wp/hAGfkE2.jpg');">
+<head>
+    <!-- icon -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+    <!-- socketio -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js" integrity="sha512-v8ng/uGxkge3d1IJuEo6dJP8JViyvms0cly9pnbfRxT6/31c3dRWxIiwGnMSWwZjHKOuY3EVmijs7k1jz/9bLA==" crossorigin="anonymous"></script>
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- google Material icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   
+    <!-- custom css -->
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='chatroom.css')}}">
+    
+
+    <script type="text/javascript"> 
+        var myRoomID = "{{room_id}}"; 
+        var myName = "{{display_name}}"; 
+        var audioMuted = "{{mute_audio}}"=="1";
+        var videoMuted = "{{mute_video}}"=="1";
+        console.log(">> {{mute_audio}}, {{mute_video}}", audioMuted, videoMuted);
+    </script>
+    <script src="{{url_for('static', filename='chatroom_ui.js')}}"></script>
+    <script src="{{url_for('static', filename='chatroom_networking.js')}}"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        div.a {
+            text-align:right;
+        }
+    </style>
+    <title>[GD™] Club Chat [{{room_id}}]</title>
+</head>
+<body>
+    
+    <div>
+        <h1><p style="color: white; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial;">[GD™] Club Chat</p></h1>
+        <div class="room-info">
+            <h3><p style="color: white;">Club: <span class="heading-mark">{{room_id}}</span></p></h3>
+            <p style="color: white;">You have joined as <span class="heading-mark">{{display_name}}</span></p>
+            <p>
+            <div class="a"><p style="color: white;">Ask your friends to join using the club id: <span class="heading-mark">{{room_id}}</span></p></div>
+            <div class="a" id="room_link"></div></p>
+        </div>
+    </div>
+        
+    <div class="container-fluid px-0 mx-0">
+        <div id="video_grid" class="video-grid"></div>
+
+        <div id="control_box" class="row control-box shadow">
+            <div class="col-7 col-md-8 col-lg-9 d-flex justify-content-around align-items-center button-box">
+                
+                <button id="bttn_mute" class="btn btn-lg btn-outline-secondary rounded-circle">
+                    <span id="mute_icon" class="material-icons pt-2">
+                        mic
+                    </span>
+                </button>
+                <button id="bttn_vid_mute"class="btn btn-lg btn-outline-secondary rounded-circle">
+                    <span id="vid_mute_icon" class="material-icons pt-2">
+                        videocam
+                    </span>
+                </button>
+                <button id="call_end" class="btn btn-lg btn-danger rounded-circle">
+                    <span class="material-icons pt-2">
+                        call_end
+                    </span>
+                </button>
+            </div>
+            <div id="div_local_vid" class="col-5 col-md-4 col-lg-3 video-item ml-auto">
+                <div class="vid-wrapper">
+                    <video id="local_vid" autoplay muted></video>
+                </div>
+            </div>
+        </div>
+    </div>    
+</body>
+</div>
+</html>
