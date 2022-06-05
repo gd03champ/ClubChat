@@ -1,4 +1,4 @@
-# GD-ClubChat
+# Club Chat
 Video calling web app. Create a custom room called club here , share the link, connect...
 
 # Installing dependancies
