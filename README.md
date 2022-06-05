@@ -1,8 +1,8 @@
 # GD-ClubChat
-A free video calling app that can connect as many friends as possible . This doesn't require any account or any app to be installed . Just create a custom room called club here , share the link, enjoy...
+Video calling web app. Create a custom room called club here , share the link, connect...
 
-# Installation
+# Installing dependancies
  Into the project directory, run "pip -r requirements"
  
- # Using
+ # Running the server
  run "python server.py" and open "localhost"5000" in your browser
