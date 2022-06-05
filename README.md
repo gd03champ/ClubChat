@@ -1,5 +1,5 @@
 # Club Chat
-Video calling web app. Create a custom room called club here , share the link, connect...
+Video calling web app. Create a custom room called club here , share the link, connect
 
 # Installing dependancies
  Into the project directory, run "pip -r requirements"
